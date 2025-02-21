@@ -12,6 +12,11 @@ const userId = "john_doe_17091999"; // Your magic name
 const email = "john@xyz.com"; // Your magic email
 const rollNumber = "ABCD123"; // Your magic roll number
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the Magic Box API! Use /bfhl for requests.');
+});
+
 app.post('/bfhl', (req, res) => {
     const data = req.body.data || [];
     const numbers = data.filter(item => !isNaN(item));
